@@ -1,20 +1,32 @@
-// Mobile redirect
-
-if (window.innerWidth <= 576 && window.location.pathname.includes('preview.html')) {
+// ✅ Mobile: open creative directly
+if (window.innerWidth <= 576) {
   window.location.href = './Scratch-Card/index.html';
 }
 
 window.addEventListener('DOMContentLoaded', () => {
   const creativeFolder = 'Scratch-Card';
+
+  /* Load creative inside iframe */
   const iframe = document.getElementById('mock-frame');
-  iframe.src = `./${creativeFolder}/index.html`;
+  if (iframe) {
+    iframe.src = `./${creativeFolder}/index.html`;
+  }
 
-  // QR logic
-  const qrUrl = `https://www.napptix.com/creatives/${creativeFolder}/${creativeFolder}/index.html`;
-  document.getElementById('qrImage').src =
-    `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(qrUrl)}`;
+  /* ✅ Correct GitHub Pages QR URL */
+  const baseUrl = window.location.origin + window.location.pathname;
+  const qrUrl = `${baseUrl}${creativeFolder}/index.html`;
 
+  /* QR modal logic */
   const modal = document.getElementById('qrModal');
-  document.getElementById('openScanner').onclick = () => modal.style.display = 'flex';
-  document.getElementById('closeScanner').onclick = () => modal.style.display = 'none';
+  const qrImage = document.getElementById('qrImage');
+  const openBtn = document.getElementById('openScanner');
+  const closeBtn = document.getElementById('closeScanner');
+
+  if (modal && qrImage && openBtn && closeBtn) {
+    qrImage.src =
+      `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(qrUrl)}`;
+
+    openBtn.onclick = () => modal.style.display = 'flex';
+    closeBtn.onclick = () => modal.style.display = 'none';
+  }
 });

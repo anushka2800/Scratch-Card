@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const bottomImg = document.getElementById('bottomImg');
   const topCanvas = document.getElementById('topCanvas');
   const confettiCanvas = document.getElementById('confettiCanvas');
-  const ctx = topCanvas.getContext('2d');
-  const confettiCtx = confettiCanvas.getContext('2d');
+  
+  const ctx = canvas.getContext('2d', { willReadFrequently: true });
   const gestureImg = document.getElementById('gestureImg');
   const leftParty = document.getElementById('leftParty');
 const rightParty = document.getElementById('rightParty');
@@ -56,7 +56,7 @@ const rightParty = document.getElementById('rightParty');
   topImg.onload = () => {
     resizeCanvas();
 
-    bottomImg.src = 'assets/Bottom_image.png';
+    bottomImg.src = 'assets/bottom_image.png';
     bottomImg.onload = () => {
       bottomImg.style.visibility = 'visible';
       gestureImg.style.display = 'block';
