@@ -1,0 +1,393 @@
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: #f9fbfc;
+  color: #0f172a;
+}
+
+/* NAVBAR */
+.navbar {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+  background: #0b0f14; /* deep charcoal */
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.navbar img {
+  height: 80px;
+  position: relative;
+  top: 8px;
+  transform: scale(1.2);
+  transform-origin: center;
+}
+
+/* SECTION */
+.preview-section {
+  padding: 48px 0;
+}
+
+.preview-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  margin-top: -1px;   /* remove any visible gap */
+  border-top: 1px solid #e5e7eb;   /* subtle connection line */
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 10px 28px rgba(15,23,42,0.08);
+}
+
+/* LEFT */
+.ad-details {
+   width: 280px;
+  background: #f1f5f9;   /* visible against #f9fbfc */
+  border-radius: 14px;
+  padding: 22px;
+
+  border: 1px solid #e2e8f0;
+
+  box-shadow:
+    0 10px 24px rgba(15, 23, 42, 0.08),
+    0 4px 10px rgba(15, 23, 42, 0.04);
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.detail-row span { color: #64748b; }
+.detail-row strong { font-weight: 500; }
+
+/* CENTER */
+.preview-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* MOBILE FRAME (FIXED) */
+.mobile-frame {
+  width: 250px;
+  height: 460px;
+  background: #ffffff;
+  border-radius: 28px;
+  border: 3px solid #cbd5e1;
+  outline: 1px solid #e5e7eb;
+
+  position: relative;
+  padding-top: 46px;
+  overflow: hidden;
+
+  /* ✅ Shadow added */
+  box-shadow:
+    0 18px 30px rgba(15, 23, 42, 0.18),
+    0 6px 12px rgba(15, 23, 42, 0.08);
+}
+
+/* NOTCH */
+.notch {
+  width: 80px;
+  height: 9px;
+  background: #cbd5e1;
+  border-radius: 10px;
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.status-bar {
+  position: absolute;
+  top: 26px;
+  left: 14px;
+  right: 14px;
+  height: 18px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 11px;
+  color: #334155;
+  pointer-events: none;
+}
+
+.status-icons i {
+  margin-left: 6px;
+  font-size: 11px;
+}
+.address-bar {
+  position: absolute;
+  top: 50px;
+  left: 14px;
+  right: 14px;
+  height: 26px;
+
+  background: #f1f5f9;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 10px;
+
+  font-size: 11px;
+  color: #475569;
+  pointer-events: none;
+}
+
+.address-bar i {
+  font-size: 10px;
+  color: #22f3e6;
+}
+
+/* IFRAME */
+.iframe-wrapper {
+  position: absolute;
+  top: 86px;        /* below status + address bar */
+  left: 3px;
+  right: 3px;
+  bottom: 42px;     /* space for virtual buttons */
+
+  background: #000;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mock-preview {
+  width: 100%;
+  height: 100%;
+  border: none;
+
+  aspect-ratio: 9 / 16;   /* portrait ad */
+  max-height: 100%;
+  max-width: 100%;
+}
+
+/* VIRTUAL BUTTONS */
+.virtual-buttons {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 42px;
+  background: #f1f5f9;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.virtual-buttons i {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+/* RIGHT */
+.layout-info {
+  width: 220px;
+  text-align: right;
+}
+
+.layout-name {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.layout-sub {
+  font-size: 12px;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+
+/* SCAN BUTTON */
+.scan-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #22f3e6;
+  cursor: pointer;
+}
+
+/* QR MODAL */
+.qr-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(15,23,42,0.4);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-box {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.qr-box img {
+  width: 140px;
+}
+
+.qr-box p {
+  margin: 12px 0;
+  font-size: 14px;
+}
+
+.qr-box button {
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  background: #22f3e6;
+  cursor: pointer;
+}
+
+/* LOGO SIZE */
+.brand-logo {
+  height: 44px;
+}
+
+/* TOP HEADER INSIDE MAIN CONTAINER */
+.preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.layout-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* CONTENT ROW */
+.preview-content {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+}
+
+/* DETAILS CARD */
+.details-card {
+  width: 280px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+/* SCAN BUTTON */
+.scan-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #22f3e6;
+  cursor: pointer;
+}
+.preview-header-wrapper {
+  max-width: 1200px;
+  margin: 0 auto 0 auto;           /* no bottom margin needed */
+  background: #ffffff;
+  border-radius: 16px 16px 0 0;
+  padding: 20px 40px;              /* slightly less padding looks cleaner */
+  box-shadow: 0 10px 28px rgba(15,23,42,0.08);
+  
+  display: flex;                   /* ← important */
+  align-items: center;             /* vertically centers everything in one line */
+  justify-content: space-between;  /* pushes children to left & right edges */
+}
+
+.header-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;                     /* take full available width */
+  margin: 0;
+}
+
+/* Reset default heading margin + control size */
+.header-section h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #0f172a;
+  line-height: 1.2;
+}
+
+/* Make sure button doesn't add extra space */
+.header-section .scan-btn {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-size: 24px;                 /* slightly bigger icon looks balanced */
+}
+
+/* Optional: add some breathing room if the title feels too close to the edge */
+.header-section h2 {
+  padding-right: 16px;             /* ← adjust if needed */
+}
+/* Responsive styling */
+/* @media (max-width: 1024px) {
+    .mobile-frame {
+        width: 180px;
+        height: 340px;
+        padding-top: 40px;
+        transform: translateX(-50%);
+    }
+
+    .iframe-wrapper {
+        width: 178px;
+        height: 320px;
+    }
+}
+
+@media (max-width: 850px) {
+    .mobile-frame {
+        width: 180px;
+        height: 339px;
+        padding-top: 30px;
+        transform: translateX(-5%);
+        margin-top: -50px;
+    }
+
+    .iframe-wrapper {
+        width: 190px;
+        height: 310px;
+    }
+} */
+
+/* @media (max-width: 576px) {
+    .mobile-frame {
+        width: 180px;
+        height: 339px;
+        padding-top: 30px;
+        transform: translateX(-5%);
+        margin-top: -50px;
+    }
+
+    .iframe-wrapper {
+        width: 190px;
+        height: 310px;
+    }
+    .mock-preview {
+        width: calc(100% / 0.58); 
+        height: 166%; 
+        transform: scale(0.58); 
+        transform-origin: top left; 
+        border: none; 
+        position: absolute; 
+        top: 0;
+        overflow: hidden;}
+} */

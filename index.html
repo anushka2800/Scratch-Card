@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Creative Preview</title>
+
+  <link rel="icon" type="image/png" href="./assets/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="./style.css?v=4.0">
+
+  <script>
+    if (window.innerWidth <= 576 && window.location.pathname.includes('preview.html')) {
+      window.location.href = './Scratch-Card/index.html';
+    }
+  </script>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <img src="./assets/logo.png" alt="Adobrain Media">
+</nav>
+
+<section class="preview-section">
+    <div class="preview-header-wrapper">
+    <div class="header-section">
+      <h2>Scratch-Card</h2>
+      <button class="scan-btn" id="openScanner" title="Scan on mobile">
+        <i class="fas fa-qrcode"></i>
+      </button>
+    </div>
+  </div>
+  <div class="preview-container">
+    <!-- LEFT -->
+    <div class="ad-details">
+      <div class="detail-row"><span>Ad Type</span><strong>Interactive Ad (Interstitial)</strong></div>
+      <div class="detail-row"><span>Ad Size</span><strong>Full Screen (1080 × 1920)</strong></div>
+      <div class="detail-row"><span>Orientation</span><strong>Portrait</strong></div>
+      <div class="detail-row"><span>Platform</span><strong>Mobile Web</strong></div>
+      <div class="detail-row"><span>Device</span><strong>Mobile</strong></div>
+      <div class="detail-row"><span>CTA</span><strong>Scratch to Reveal</strong></div>
+    </div>
+
+    <!-- CENTER -->
+    <div class="preview-center">
+      <div class="mobile-frame">
+        <div class="notch"></div>
+        <!-- STATUS BAR -->
+<div class="status-bar">
+  <span class="status-time">9:41</span>
+  <div class="status-icons">
+    <i class="fas fa-signal"></i>
+    <i class="fas fa-wifi"></i>
+    <i class="fas fa-battery-full"></i>
+  </div>
+</div>
+
+<!-- ADDRESS BAR -->
+<div class="address-bar">
+  <i class="fas fa-lock"></i>
+  <span>adobrain.preview</span>
+</div>
+
+        <div class="iframe-wrapper">
+          <iframe id="mock-frame" class="mock-preview"></iframe>
+        </div>
+
+        <div class="virtual-buttons">
+          <i class="fas fa-arrow-left"></i>
+          <i class="fas fa-home"></i>
+          <i class="fas fa-th-large"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+
+</section>
+
+<div class="qr-modal" id="qrModal">
+  <div class="qr-box">
+    <img id="qrImage" alt="QR Code">
+    <p>Scan to preview on mobile</p>
+    <button id="closeScanner">Close</button>
+  </div>
+</div>
+
+<script src="./script.js"></script>
+</body>
+</html>

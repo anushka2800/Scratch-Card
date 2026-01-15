@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="ad.size" content="width=360, height=640">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Image Scratch Reveal</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div id="container">
+    <button class="close-btn" onclick="closeAd()">×</button>
+
+    <img id="bottomImg" />
+    <canvas id="topCanvas"></canvas>
+
+    <img id="leftParty" src="assets/right.png" style="display:none;" />
+    <img id="rightParty" src="assets/left.png" style="display:none;" />
+
+    <canvas id="confettiCanvas"></canvas>
+    <img id="gestureImg" src="assets/gesture.png" style="display:none;" />
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
