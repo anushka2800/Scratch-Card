@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const bottomImg = document.getElementById('bottomImg');
   const topCanvas = document.getElementById('topCanvas');
   const confettiCanvas = document.getElementById('confettiCanvas');
-  
-  const ctx = canvas.getContext('2d', { willReadFrequently: true });
+   const ctx = topCanvas.getContext('2d', { willReadFrequently: true });
+const confettiCtx = confettiCanvas.getContext('2d');
   const gestureImg = document.getElementById('gestureImg');
   const leftParty = document.getElementById('leftParty');
 const rightParty = document.getElementById('rightParty');
